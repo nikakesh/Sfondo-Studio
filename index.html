@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Sfondo Studio — Phone wallpapers in thick palette-knife texture. Instant download.">
+<title>Sfondo Studio – Exploring the Alps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<script src="./app.js" defer></script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<a class="announce">Hello</a>
+
+<div class="wrap">
+  <header class="site-header">
+    <a class="wordmark" href="#top">Sfondo Studio</a>
+    <nav aria-label="Main">
+      <ul class="site-nav">
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#preview">Preview</a></li>
+        <li><button class="bag-btn" id="bag" type="button" aria-haspopup="dialog" aria-controls="bag-drawer">Bag (<span id="bag-count">0</span>)</button></li>
+      </ul>
+    </nav>
+  </header>
+</div>
+
+<main id="main">
+
+  <div class="wrap">
+    <section class="hero" id="top">
+      <h1>Hang a painting<br>in your pocket.</h1>
+      <p class="lede">Phone wallpapers in thick palette-knife texture. Instant download.</p>
+      <div class="buy-row"><a class="btn" href="#collections">Browse collections</a></div>
+      <div class="hero-stage" aria-hidden="true">
+        <div class="iphone-frame hero-phone">
+          <div class="dynamic-island"></div>
+          <img class="wallpaper-display on" alt="">
+          <img class="wallpaper-display" alt="">
+          <div class="lockscreen-content">
+            <div class="lockscreen-date" data-lock-date>Sun, 15 Nov</div>
+            <time class="lockscreen-time" data-lock-time>09:41</time>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="catalog-sec" id="collections">
+    <div class="wrap">
+      <h2>Collections</h2>
+      <p class="section-note">Each pack is a small set of wallpapers with one subject and one palette.</p>
+
+      <div class="catalog">
+        
+      </div>
+
+    </div>
+  </section>
+
+  <section class="preview" id="preview">
+    <div class="wrap">
+      <div>
+        <h2>See it on your phone</h2>
+        <p class="section-note">Previewing Exploring the Alps. Choose a wallpaper, then switch between the lock screen and the home screen.</p>
+        <div class="picker" role="group" aria-label="Choose a wallpaper">
+          <button class="pick" type="button" data-pick="0" aria-pressed="true" aria-label="Ascent"><img data-wall="0" alt=""></button>
+          <button class="pick" type="button" data-pick="1" aria-pressed="false" aria-label="Switchbacks"><img data-wall="1" alt=""></button>
+          <button class="pick" type="button" data-pick="2" aria-pressed="false" aria-label="The Red Cabin"><img data-wall="2" alt=""></button>
+        </div>
+      </div>
+
+      <div class="stage">
+        <input type="radio" id="mode-lock" name="screen-mode" class="state-input" checked>
+        <input type="radio" id="mode-home" name="screen-mode" class="state-input">
+        <div class="screen-mode-toggle" role="group" aria-label="Preview mode">
+          <label for="mode-lock" class="mode-label">Lock Screen</label>
+          <label for="mode-home" class="mode-label">Home Screen</label>
+        </div>
+        <div class="iphone-frame">
+          <div class="dynamic-island"></div>
+          <img class="wallpaper-display" id="phone-wall" data-wall="0" alt="Selected wallpaper on a phone">
+          <div class="lockscreen-content">
+            <div class="lockscreen-date" data-lock-date>Sun, 15 Nov</div>
+            <time class="lockscreen-time" data-lock-time>09:41</time>
+          </div>
+          <div class="homescreen-content" aria-hidden="true">
+            <div class="home-widget"></div>
+            <div class="widget-row">
+              <div class="home-widget widget-small"></div>
+              <div class="home-widget widget-small"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <form class="join" id="join">
+      <label for="email">New packs, straight to your inbox.</label>
+      <div>
+        <input id="email" type="email" required placeholder="Email address" autocomplete="email">
+        <button class="btn" type="submit">Join</button>
+      </div>
+    </form>
+    <div class="foot-meta">
+      <span>Sfondo Studio</span>
+      <span>Paintings for your phone.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="drawer-backdrop" id="drawer-backdrop"></div>
+<aside class="bag-drawer" id="bag-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden>
+  <div class="drawer-head">
+    <h2 id="drawer-title">Your Bag</h2>
+    <button class="close-btn" id="close-drawer" type="button" aria-label="Close bag">×</button>
+  </div>
+  <div class="drawer-body" id="drawer-body"></div>
+  <div class="drawer-foot" id="drawer-foot" hidden>
+    <div class="subtotal-row">
+      <span>Total</span>
+      <span class="price" id="bag-total">$0.00</span>
+    </div>
+    <button class="btn" id="checkout-btn" type="button">Checkout</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>
