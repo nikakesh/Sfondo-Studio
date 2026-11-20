@@ -217,7 +217,7 @@ h1 {
   height: 566px;
   overflow: hidden;
   background: var(--paper-2);
-  border: 8px solid var(--ink);
+  border: 8px solid #22344d;
   border-radius: 44px;
   box-shadow: 0 30px 50px -16px rgba(13, 26, 43, .4);
 }
@@ -226,7 +226,7 @@ h1 {
   flex: none;
   width: 320px;
   height: 660px;
-  border-color: #22344d;
+  border-color: var(--ink);
   box-shadow: 0 0 0 1px rgba(179, 154, 98, .55), 0 30px 60px rgba(0, 0, 0, .5);
 }
 
