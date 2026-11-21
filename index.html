@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Sfondo Studio — Phone wallpapers in thick palette-knife texture. Instant download.">
+<title>Sfondo Studio – Impasto Phone Wallpapers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<script src="./app.js" defer></script>
+<link rel="icon" type="image/x-icon" href="./icon.png">
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<a class="announce" href="#collections">New pack: Exploring the Alps, $1.99</a>
+
+<div class="wrap">
+  <header class="site-header">
+    <a class="wordmark" href="#top">Sfondo Studio</a>
+    <nav aria-label="Main">
+      <ul class="site-nav">
+        <li><a href="#featured">Featured</a></li>
+        <li><a href="#collections">Collections</a></li>
+        <li><button class="bag-btn" id="bag" type="button" aria-haspopup="dialog" aria-controls="bag-drawer">Bag (<span id="bag-count">0</span>)</button></li>
+      </ul>
+    </nav>
+  </header>
+</div>
+
+<main id="main">
+  <div class="wrap">
+    <section class="hero" id="top">
+      <h1>Hang a painting<br>in your pocket.</h1>
+      <p class="lede">Phone wallpapers in thick palette-knife texture. Instant download.</p>
+      <div class="buy-row"><a class="btn" href="#collections">Browse collections</a></div>
+      <div class="hero-stage" aria-hidden="true">
+        <div class="iphone-frame hero-phone">
+          <div class="dynamic-island"></div>
+          <img class="wallpaper-display on" alt="">
+          <img class="wallpaper-display" alt="">
+          <div class="lockscreen-content">
+            <div class="lockscreen-date" data-lock-date>Sun, 15 Nov</div>
+            <time class="lockscreen-time" data-lock-time>09:41</time>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="featured-sec" id="featured">
+    <div class="wrap">
+      <h2>Right now</h2>
+      <p class="section-note">What’s new and moving fast across the studio.</p>
+      <div class="featured-grid" id="featured-grid"></div>
+    </div>
+  </section>
+
+  <section class="catalog-sec" id="collections">
+    <div class="wrap">
+      <div class="catalog-head">
+        <div>
+          <h2>Collections</h2>
+          <p class="section-note">Each pack is a small set of wallpapers with one subject and one palette.</p>
+        </div>
+        <div class="filter-bar" id="filter-bar" role="group" aria-label="Filter collections by tag"></div>
+      </div>
+
+      <div class="catalog"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <form class="join" id="join">
+      <label for="email">New packs, straight to your inbox.</label>
+      <div>
+        <input id="email" type="email" required placeholder="Email address" autocomplete="email">
+        <button class="btn" type="submit">Join</button>
+      </div>
+    </form>
+    <div class="foot-meta">
+      <span>Sfondo Studio</span>
+      <span>Paintings for your phone.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Bag Slide-over Drawer -->
+<div class="drawer-backdrop" id="drawer-backdrop"></div>
+<aside class="bag-drawer" id="bag-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden>
+  <div class="drawer-head">
+    <h2 id="drawer-title">Your Bag</h2>
+    <button class="close-btn" id="close-drawer" type="button" aria-label="Close bag">×</button>
+  </div>
+  <div class="drawer-body" id="drawer-body"></div>
+  <div class="drawer-foot" id="drawer-foot" hidden>
+    <div class="subtotal-row">
+      <span>Total</span>
+      <span class="price" id="bag-total">$0.00</span>
+    </div>
+    <button class="btn" id="checkout-btn" type="button">Checkout</button>
+  </div>
+</aside>
+
+<!-- iOS Bottom-Sheet Preview Popup -->
+<div class="sheet-backdrop" id="sheet-backdrop"></div>
+<aside class="ios-sheet" id="ios-sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden>
+  <div class="sheet-grabber-area" id="sheet-grabber">
+    <div class="sheet-grabber"></div>
+  </div>
+  <div class="sheet-header">
+    <div>
+      <h2 id="sheet-title">Exploring the Alps</h2>
+      <p class="sheet-sub" id="sheet-sub">5 wallpapers · Instant download</p>
+    </div>
+    <button class="sheet-close" id="sheet-close" type="button" aria-label="Close preview">✕</button>
+  </div>
+
+  <div class="sheet-scroll">
+    <div class="sheet-card">
+      <div class="segmented" role="group" aria-label="Screen mode">
+        <button class="seg-btn active" type="button" data-sheet-mode="lock">Lock Screen</button>
+        <button class="seg-btn" type="button" data-sheet-mode="home">Home Screen</button>
+      </div>
+
+      <div class="sheet-phone-wrap">
+        <div class="iphone-frame sheet-phone" id="sheet-phone">
+          <div class="dynamic-island"></div>
+          <img class="wallpaper-display" id="sheet-wall" alt="Wallpaper preview">
+
+          <div class="lockscreen-content">
+            <div class="lockscreen-date" data-lock-date>Sun, 15 Nov</div>
+            <time class="lockscreen-time" data-lock-time>09:41</time>
+          </div>
+
+          <div class="homescreen-content" aria-hidden="true">
+            <div class="ios-widget-lg">
+              <span class="w-label">WEATHER</span>
+              <span class="w-temp">14°</span>
+              <span class="w-desc">Clear Alpine Sky</span>
+            </div>
+            <div class="ios-app-grid">
+              <div class="ios-app" style="background:#34c759"></div>
+              <div class="ios-app" style="background:#007aff"></div>
+              <div class="ios-app" style="background:#ff9500"></div>
+              <div class="ios-app" style="background:#ff3b30"></div>
+              <div class="ios-app" style="background:#5856d6"></div>
+              <div class="ios-app" style="background:#af52de"></div>
+              <div class="ios-app" style="background:#2c2c2e"></div>
+              <div class="ios-app" style="background:#5ac8fa"></div>
+            </div>
+            <div class="ios-dock">
+              <div class="ios-app" style="background:#34c759"></div>
+              <div class="ios-app" style="background:#007aff"></div>
+              <div class="ios-app" style="background:#ff2d55"></div>
+              <div class="ios-app" style="background:#ffcc00"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sheet-card">
+      <div class="sheet-card-label">Choose a painting</div>
+      <div class="sheet-thumbs" id="sheet-thumbs" role="group" aria-label="Wallpapers in this pack"></div>
+    </div>
+
+    <div class="sheet-card sheet-cta-card">
+      <div class="sheet-price-info">
+        <span class="sheet-price-label">Full pack</span>
+        <span class="sheet-price-val" id="sheet-price">$1.99</span>
+      </div>
+      <button class="btn sheet-add-btn" id="sheet-add-btn" type="button">Add to Bag</button>
+    </div>
+  </div>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+
+</html>

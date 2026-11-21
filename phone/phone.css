@@ -1,0 +1,147 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(10, 10, 10);
+}
+
+:root{
+    --mainColor: #ebe7c3;
+    --secondaryColor: #070042;
+}
+
+main{
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--mainColor);
+}
+
+.mockup-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255);
+    padding: 32px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(19, 34, 56, 0.04);
+    width: fit-content;
+    margin: 0 auto;
+    font-family: 'Inter', sans-serif;
+}
+
+.state-input {
+    display: none;
+}
+
+/* Screen Mode Toggle */
+.screen-mode-toggle {
+    display: flex;
+    background: rgba(19, 34, 56, 0.06);
+    backdrop-filter: blur(8px);
+    padding: 4px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(19, 34, 56, 0.08);
+}
+
+.mode-label {
+      padding: 6px 14px;
+      font-size: 0.75rem;
+      color: #556070;
+      cursor: pointer;
+      border-radius: 16px;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+/* iPhone Frame */
+.iphone-frame {
+      width: 270px;
+      height: 550px;
+      border-radius: 44px;
+      border: 8px solid #132238;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(19, 34, 56, 0.28);
+      background-color: #FAF7F2;
+}
+
+.dynamic-island {
+      width: 78px;
+      height: 22px;
+      background-color: #132238;
+      border-radius: 20px;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+}
+
+.wallpaper-display {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+}
+
+/* Lock Screen Content */
+.lockscreen-content {
+      position: absolute;
+      top: 50px;
+      width: 100%;
+      text-align: center;
+      z-index: 10;
+      color: #FFFFFF;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+      pointer-events: none;
+}
+
+.lockscreen-date { font-size: 1rem; font-weight: 500; letter-spacing: 0.04em; }
+.lockscreen-time { font-size: 4.3rem; font-weight: 600; line-height: 1; letter-spacing: -0.02em; }
+
+/* Home Screen Content */
+.homescreen-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% - 32px);
+      height: calc(101% - 50px);
+      padding: 50px 16px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 10;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.12);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+}
+
+.home-widget {
+      background: rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 20px;
+      /* padding: 14px; */
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+.widget-large { height: 110px; width: 100%; }
+.widget-row { display: flex; gap: calc(100% - 220px); }
+.widget-small { flex: 1; height: 110px; border-radius: 16px; }
+
+    /* CSS States */
+#mode-lock:checked ~ .screen-mode-toggle label[for="mode-lock"],
+#mode-home:checked ~ .screen-mode-toggle label[for="mode-home"] {
+      background-color: #132238;
+      color: #FAF7F2;
+      box-shadow: 0 2px 8px rgba(19, 34, 56, 0.2);
+}
+
+#mode-home:checked ~ .iphone-frame .homescreen-content {
+      opacity: 1;
+      pointer-events: auto;
+}
